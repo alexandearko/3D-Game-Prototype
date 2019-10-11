@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThirdPersonController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 2;
     public float runSpeed = 4;
@@ -12,7 +12,6 @@ public class ThirdPersonController : MonoBehaviour
     float speedSmoothVelocity;
     float currentSpeed;
     private Animator animator;
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -35,7 +34,6 @@ public class ThirdPersonController : MonoBehaviour
         transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);    //desplazamiento del personaje
 
         float animatorSpeedPercent = ((walking)?.5f:1f * inputDir.magnitude);
-        animator.SetFloat("Speed", animatorSpeedPercent);
-        
+        animator.SetFloat("Speed", animatorSpeedPercent);      
     }
 }
