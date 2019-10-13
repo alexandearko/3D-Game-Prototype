@@ -53,10 +53,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AcquireChan\Scripts\AcquireChanController.cs" />
+     <Compile Include="Assets\AcquireChan\Scripts\MotionChanger.cs" />
+     <Compile Include="Assets\AcquireChan\Scripts\SimpleFollowCam.cs" />
      <Compile Include="Assets\Scripts\Camera.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonCameraController.cs" />
-     <None Include="Assets\MonsterGroup1\TailedFox\readMe.txt" />
+     <None Include="Assets\AcquireChan\Models\Shaders\imagine_chara_parts_face.shader" />
+     <None Include="Assets\AcquireChan\Models\Shaders\imagine_chara_parts_body.shader" />
+     <None Include="Assets\AcquireChan\Models\Shaders\imagine_chara_parts_hair.shader" />
+     <None Include="Assets\AcquireChan\Models\Shaders\imagine_chara.shader" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/JuegosPlatzi/Puzzle/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
@@ -83,6 +89,12 @@
  </Reference>
  <Reference Include="UnityEditor.UI">
  <HintPath>E:/JuegosPlatzi/Puzzle/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
+ <HintPath>E:/JuegosPlatzi/Puzzle/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.ProBuilder.AddOns.Editor">
+ <HintPath>E:/JuegosPlatzi/Puzzle/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

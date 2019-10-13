@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public float speedSmoothTime = 0.1f;
     float speedSmoothVelocity;
     float currentSpeed;
+    bool attacking = false;
+    public float attackTime;
+    float attackTimeCounter;
     private Animator animator;
     void Start()
     {
@@ -18,6 +21,26 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            attacking = true;
+            attackTimeCounter = attackTime;
+            //playerRigidbody.velocity = Vector2.zero;
+            animator.SetBool("Attack", true);
+            //sfxManager.playerAttack.Play();
+        }
+
+        if (attacking)
+        {
+            attackTimeCounter -= Time.deltaTime;
+            if(attackTimeCounter < 0)
+            {
+                attacking = false;
+                animator.SetBool("Attack", false);
+            }
+        }
+        else
+        {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")); //calcula un vector dos cuando presionamos una tecla de movimeinto en horizontal y vertical
         Vector2 inputDir = input.normalized;    //calcula la hipotenusa del vector dando como resultado la direccion del movimiento, bastante util para calcular un movimiento en diagonal
 
@@ -34,6 +57,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(transform.forward * currentSpeed * Time.deltaTime, Space.World);    //desplazamiento del personaje
 
         float animatorSpeedPercent = ((walking)?.5f:1f * inputDir.magnitude);
-        animator.SetFloat("Speed", animatorSpeedPercent);      
+        animator.SetFloat("Speed", animatorSpeedPercent);
+        }      
     }
 }
